@@ -1,0 +1,241 @@
+/* Темная тема с красными кнопками */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #0a0c10;
+  color: #eef2f6;
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.page {
+  max-width: 1200px;
+  width: 100%;
+  background: #1a1e24;
+  border-radius: 32px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+}
+
+.header {
+  padding: 32px 40px 16px 40px;
+  border-bottom: 1px solid #2e3740;
+}
+
+.header__title {
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #a3e0c0;
+  margin-bottom: 4px;
+}
+
+.header__subtitle {
+  font-size: 20px;
+  font-weight: 500;
+  color: #7acba0;
+}
+
+.header__description {
+  font-size: 15px;
+  color: #b0c4de;
+  margin-top: 12px;
+}
+
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 24px 40px 40px 40px;
+  gap: 40px;
+}
+
+.registration {
+  flex: 1 1 380px;
+  min-width: 320px;
+}
+
+.topology {
+  flex: 0 1 300px;
+  background: #252b33;
+  border-radius: 24px;
+  padding: 24px;
+  align-self: start;
+}
+
+.form__field {
+  margin-bottom: 20px;
+}
+
+.form__label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: #cbd5e0;
+  margin-bottom: 6px;
+}
+
+.form__input {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 15px;
+  font-family: inherit;
+  border: 1px solid #3a4552;
+  border-radius: 14px;
+  background: #262e38;
+  color: #f0f4fa;
+  transition: 0.2s;
+}
+
+.form__input::placeholder {
+  color: #7f8fa0;
+  opacity: 1;
+}
+
+.form__input:focus {
+  outline: none;
+  border-color: #e74c3c;      /* красный акцент */
+  box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.25);
+}
+
+.form__checkbox-group {
+  margin: 28px 0 24px;
+}
+
+.form__checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.form__checkbox input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #e74c3c;      /* красный акцент */
+  cursor: pointer;
+  filter: brightness(0.9);
+}
+
+.form__checkbox-label {
+  font-size: 15px;
+  color: #e0e7f0;
+}
+
+.form__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.button {
+  padding: 14px 24px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: inherit;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: 0.15s;
+  flex: 1 1 auto;
+  min-width: 200px;
+  background: transparent;
+  border: 1.5px solid transparent;
+}
+
+/* Красная сплошная кнопка (Эко-режим) */
+.button--eco {
+  background: #e74c3c;          /* ярко-красный */
+  color: #ffffff;
+  box-shadow: 0 8px 16px -6px rgba(231, 76, 60, 0.4);
+}
+
+.button--eco:hover {
+  background: #c0392b;          /* темно-красный */
+  transform: translateY(-2px);
+}
+
+/* Красная контурная кнопка (Производит. режим) */
+.button--performance {
+  background: transparent;
+  border-color: #e74c3c;        /* красная обводка */
+  color: #eef2f6;
+}
+
+.button--performance:hover {
+  background: rgba(231, 76, 60, 0.1);  /* легкая красная подсветка */
+  border-color: #c0392b;
+}
+
+.topology__title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #a3e0c0;
+  margin-bottom: 24px;
+  letter-spacing: -0.01em;
+}
+
+.topology__item {
+  background: #1e2530;
+  border-radius: 20px;
+  padding: 18px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+.topology__item-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #9aaec9;
+  margin-bottom: 6px;
+}
+
+.topology__item-value {
+  font-size: 28px;
+  font-weight: 700;
+  color: #b3f0d0;
+  line-height: 1.2;
+}
+
+.topology__item-value small {
+  font-size: 16px;
+  font-weight: 400;
+  color: #8fa4bb;
+  margin-left: 6px;
+}
+
+.form__note {
+  font-size: 13px;
+  color: #9aaec9;
+  margin-top: 8px;
+  padding-left: 28px;
+}
+
+@media (max-width: 700px) {
+  .header {
+    padding: 24px 20px 12px 20px;
+  }
+  .main {
+    padding: 20px;
+    gap: 30px;
+  }
+  .topology {
+    flex-basis: 100%;
+  }
+  .form__actions {
+    flex-direction: column;
+  }
+  .button {
+    min-width: auto;
+  }
+}
