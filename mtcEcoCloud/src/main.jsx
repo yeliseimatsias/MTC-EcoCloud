@@ -5,6 +5,6 @@ import './css/index.css'
 
 
 createRoot(document.getElementById('root')).render(
- // <Authorization />
-  <App />
+  <Authorization />
+  //<App />
 )

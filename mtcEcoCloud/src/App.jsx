@@ -1,9 +1,11 @@
 import { useState } from 'react'
+import Header from './Header'
 
 function App() {
 
   return (
-    <p>test</p>
+    <Header navItems={['Панель управления', 'Виртуальные серверы', 'Сети', 'Хранилище', 'Мониторинг']}/>
+    
   )
 }
 
