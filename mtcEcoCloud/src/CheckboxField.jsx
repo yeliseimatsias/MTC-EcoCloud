@@ -1,5 +1,4 @@
-// components/CheckboxField.jsx
-import React from 'react';
+
 
 const CheckboxField = ({ id, label, checked, onChange }) => {
   return (

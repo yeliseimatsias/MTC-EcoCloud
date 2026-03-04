@@ -1,17 +1,16 @@
 
-
-const Tabs = ({ activeTab, onTabChange }) => {
+const Tabs = ({ isLogin, onToggle }) => {
   return (
     <div className="auth-tabs">
       <button
-        className={`auth-tabs__button ${activeTab === 'login' ? 'auth-tabs__button--active' : ''}`}
-        onClick={() => onTabChange('login')}
+        className={`auth-tabs__button ${isLogin ? 'auth-tabs__button--active' : ''}`}
+        onClick={() => onToggle(true)}
       >
         Вход
       </button>
       <button
-        className={`auth-tabs__button ${activeTab === 'register' ? 'auth-tabs__button--active' : ''}`}
-        onClick={() => onTabChange('register')}
+        className={`auth-tabs__button ${!isLogin ? 'auth-tabs__button--active' : ''}`}
+        onClick={() => onToggle(false)}
       >
         Регистрация
       </button>
