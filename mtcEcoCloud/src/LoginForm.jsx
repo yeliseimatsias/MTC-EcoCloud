@@ -1,11 +1,13 @@
 // components/LoginForm.jsx
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import FormField from './FormField';
 import CheckboxField from './CheckboxField';
 import Button from './Button';
 
 const LoginForm = () => 
 {
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [remember, setRemember] = useState(false);
@@ -15,7 +17,9 @@ const LoginForm = () =>
   const handleSubmit = async (e) => 
   {
     e.preventDefault();
-
+// Важно! Чтобы страница не перезагрузилась
+  navigate('/')
+    /*
     if (!email || !password) {
       setMessage('Пожалуйста, заполните все поля');
       return;
@@ -44,6 +48,8 @@ const LoginForm = () =>
         // Предположим, сервер возвращает { success: true, token, ... }
         if (data.success) {
           setMessage('Успешный вход!');
+
+          
           console.log('Данные пользователя:', data.user);
           // Сохраняем токен, перенаправляем и т.д.
         } else {
@@ -58,6 +64,7 @@ const LoginForm = () =>
     } finally {
       setLoading(false);
     }
+*/
   };
   return (
     <form className="auth-form" onSubmit={handleSubmit}>

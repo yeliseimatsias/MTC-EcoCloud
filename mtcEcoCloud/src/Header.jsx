@@ -1,9 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './css/Header.css';
+
 
 const Header = ({ navItems = [] }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
+  const navigate = useNavigate();
 
   // Закрытие дропдауна при клике вне
   useEffect(() => {
@@ -19,7 +22,8 @@ const Header = ({ navItems = [] }) => {
   const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
 
   const handleLogout = () => {
-    console.log('Выход из системы');
+     
+    navigate('/l');
     // Здесь можно вызвать функцию выхода (очистка токена, редирект)
     setIsDropdownOpen(false);
   };

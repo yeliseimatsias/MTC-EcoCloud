@@ -1,6 +1,5 @@
-import { useState } from 'react'
 import Header from './Header'
-
+import { Routes, Route } from 'react-router-dom';
 
 import VirtualMachine from './VirtualMachine';
 
@@ -42,10 +41,9 @@ function App() {
     },
   ]
 
-  return (
+  return ( 
     <>
       <Header />
-      
       <VirtualMachine List={vmList} />
     </>
   )
