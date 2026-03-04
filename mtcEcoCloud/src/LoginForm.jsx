@@ -4,14 +4,16 @@ import FormField from './FormField';
 import CheckboxField from './CheckboxField';
 import Button from './Button';
 
-const LoginForm = () => {
+const LoginForm = () => 
+{
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [remember, setRemember] = useState(false);
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e) => 
+  {
     e.preventDefault();
 
     if (!email || !password) {
@@ -57,7 +59,6 @@ const LoginForm = () => {
       setLoading(false);
     }
   };
-
   return (
     <form className="auth-form" onSubmit={handleSubmit}>
       <FormField

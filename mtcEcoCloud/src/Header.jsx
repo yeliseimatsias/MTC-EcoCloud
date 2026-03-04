@@ -26,7 +26,8 @@ const Header = ({ navItems = [] }) => {
 
   return (
     <header className="header">
-      <div className="header__logo">МТС</div>
+      <div className="header__logo"></div>
+      
 
       <nav className="header__nav">
         {navItems.map((item, index) => (

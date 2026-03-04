@@ -1,0 +1,61 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* Затемнение фона */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px); /* Эффект размытия сзади */
+}
+
+.modal-content {
+  background: #1a1f26; /* Твой темный цвет из дашборда */
+  width: 90%;
+  max-width: 600px;
+  border-radius: 20px;
+  padding: 30px;
+  border: 1px solid #2d343f;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.modal-header h2 {
+  color: #2ecc71; /* Зеленый заголовок в твоем стиле */
+  margin: 0;
+}
+
+.modal-close-x {
+  background: none;
+  border: none;
+  color: #7f8c8d;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.modal-body {
+  max-height: 400px;
+  overflow-y: auto; /* Если машин будет много — появится скролл */
+  margin-bottom: 25px;
+
+}
+
+.modal-body .vm-card
+{
+    margin-bottom: 20px
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+}

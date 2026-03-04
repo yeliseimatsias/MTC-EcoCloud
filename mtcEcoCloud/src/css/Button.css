@@ -1,0 +1,39 @@
+
+.btn {
+  padding: 14px 20px;
+  border-radius: 20px;
+  border: 1px solid transparent; /* Для корректного отображения границ */
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+}
+
+/* Стандартные варианты */
+.btn--primary {  background: #e74c3c; color: #fff; }
+.btn--secondary { background: #95a5a6; color: #fff; }
+.btn--eco { background: #e74c3c; color: #fff; }
+.btn--outline { background: transparent; border: 1px solid #ddd; color: #7f8c8d; }
+
+/* ТВОЙ АКТИВНЫЙ СТИЛЬ */
+.btn--active {
+  background: #e74c3c !important; /* Приоритет для активного состояния */
+  border-color: #e74c3c !important;
+  color: #ffffff !important;
+  box-shadow: 0 8px 16px -6px rgba(231, 76, 60, 0.4);
+}
+
+.btn--active:hover {
+  background: #c0392b !important;
+  transform: translateY(-1px);
+}
+
+/* Эффект при наведении для обычных кнопок */
+.btn:hover:not(.btn--active) {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}

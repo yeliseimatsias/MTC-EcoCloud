@@ -1,7 +1,20 @@
+import './css/Button.css';
 
+const Button = ({ 
+  children, 
+  variant = 'primary', 
+  onClick, 
+  type = 'button',
+  className = '',
+  isActive = false // Новый пропс для активного состояния
+}) => {
+  const buttonClass = [
+    'btn',
+    `btn--${variant}`,
+    isActive ? 'btn--active' : '', // Добавляем активный класс
+    className
+  ].join(' ').trim();
 
-const Button = ({ children, variant = 'eco', onClick, type = 'button' }) => {
-  const buttonClass = `auth-button auth-button--${variant}`;
   return (
     <button className={buttonClass} onClick={onClick} type={type}>
       {children}
