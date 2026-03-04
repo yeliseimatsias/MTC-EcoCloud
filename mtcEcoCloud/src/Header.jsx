@@ -5,6 +5,7 @@ const Header = ({ navItems = [] }) => {
   return (
     <header className="header">
       <div className="header__logo">МТС</div>
+
       <nav className="header__nav">
         {navItems.map((item, index) => (
           <a key={index} href="#" className="header__nav-link">{item}</a>
