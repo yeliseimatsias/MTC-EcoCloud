@@ -47,7 +47,7 @@ function App() {
       
       <div className="vm">
       <div className="vm__left">
-        <h1 className="vm__title">Виртуальные машины</h1>
+        <h1 className="vm__title">Ваши виртуальные машины</h1>
         <div className="vm__cards">
           {vmList.map((vm) => (
             <div key={vm.name} className="vm-card">

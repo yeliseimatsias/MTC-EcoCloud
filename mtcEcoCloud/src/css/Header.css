@@ -68,3 +68,61 @@
   font-weight: bold;
   font-size: 0.9rem;
 }
+.header__user {
+  position: relative; /* чтобы дропдаун позиционировался относительно этого блока */
+  cursor: pointer;
+}
+
+.header__user-balance {
+  background: #e74c3c;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.header__user-initials {
+  width: 34px;
+  height: 34px;
+  background: #3a4552;
+  color: #eef2f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 1px solid #e74c3c;
+}
+
+.header__dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: #1a1e24;
+  border: 1px solid #3a4552;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  min-width: 150px;
+  z-index: 100;
+  overflow: hidden;
+}
+
+.header__dropdown-item {
+  width: 100%;
+  padding: 12px 20px;
+  background: transparent;
+  border: none;
+  color: #eef2f6;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.header__dropdown-item:hover {
+  background: #e74c3c;
+  color: white;
+}
