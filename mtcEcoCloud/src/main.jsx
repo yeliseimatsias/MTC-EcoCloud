@@ -14,6 +14,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         element={<App />}
         />
         <Route 
+        path="/admin" 
+        element={<App />}
+        />
+        <Route 
         path="/l" 
         element={<Authorization />}
         />

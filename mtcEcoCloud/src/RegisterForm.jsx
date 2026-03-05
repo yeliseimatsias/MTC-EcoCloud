@@ -29,13 +29,6 @@ const RegisterForm = () => {
         type="password"
         id="reg-confirm"
       />
-      <FormField
-        label="Название организации"
-        type="text"
-        id="reg-org"
-        placeholder="ООО «Зелёные решения»"
-        optional
-      />
       <div className="auth-form__checkbox-group">
         <CheckboxField id="terms" label="Согласен с условиями" />
       </div>
