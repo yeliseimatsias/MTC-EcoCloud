@@ -33,7 +33,15 @@
   color: #2ecc71; /* Зеленый заголовок в твоем стиле */
   margin: 0;
 }
-
+.selectable-card__actions
+{
+    display: flex;
+    margin-bottom: 20px;
+}
+.selectable-card__actions button
+{
+    margin-right: 15px;
+}
 .modal-close-x {
   background: none;
   border: none;

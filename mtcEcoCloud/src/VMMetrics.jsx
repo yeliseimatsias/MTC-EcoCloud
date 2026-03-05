@@ -29,31 +29,6 @@ const VMMetrics = () => {
         <MetricRow label="Сеть" value="1.2 Гб/с" />
       </div>
 
-      <div className="vm-mode-toggle">
-        <Button 
-        variant="outline" 
-        isActive={activeMode === 'eco'} 
-        onClick={() => setActiveMode('eco')}
-        >
-        Эко-режим
-        </Button>
-
-        <Button 
-        variant="outline" 
-        isActive={activeMode === 'standard'} 
-        onClick={() => setActiveMode('standard')}
-        >
-        Стандартный режим
-        </Button>
-
-        <Button 
-        variant="outline" 
-        isActive={activeMode === 'perf'} 
-        onClick={() => setActiveMode('perf')}
-        >
-        Производительный режим
-        </Button>
-      </div>
     </div>
   );
 };

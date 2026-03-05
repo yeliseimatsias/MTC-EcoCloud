@@ -1,0 +1,59 @@
+.vm-card {
+  background: #262e38;
+  border-radius: 20px;
+  padding: 18px;
+  border: 1px solid #3a4552;
+  transition: 0.2s;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.vm-card:hover {
+  box-shadow: 0 12px 20px -10px rgba(231, 76, 60, 0.3);
+  transform: translateY(-2px);
+  border-color: #e74c3c;
+}
+
+.vm-card__name {
+  font-weight: 600;
+  font-size: 18px;
+  color: #7acba0;
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px dashed #3a4552;
+}
+
+.vm-card__specs {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  color: #cbd5e0;
+  margin-bottom: 16px;
+}
+
+.vm-card__spec {
+  display: flex;
+  justify-content: space-between;
+}
+
+.vm-card__status {
+  align-self: flex-start;
+  padding: 4px 12px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.vm-card__status--on {
+  background: rgba(163, 224, 192, 0.2);
+  color: #a3e0c0;
+  border: 1px solid #a3e0c0;
+}
+
+.vm-card__status--off {
+  background: rgba(255, 255, 255, 0.1);
+  color: #9aaec9;
+  border: 1px solid #4a5b6e;
+}
