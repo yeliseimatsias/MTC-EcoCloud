@@ -51,7 +51,6 @@
 }
 
 .modal-body {
-  max-height: 400px;
   overflow-y: auto; /* Если машин будет много — появится скролл */
   margin-bottom: 25px;
 

@@ -1,7 +1,7 @@
 import './css/Modal.css';
 import Button from './Button'; // Проверь путь к кнопке!
 
-const Modal = ({ isOpen, onClose, title, children }) => {
+const Modal = ({ isOpen, onClose, title, children, needButtons }) => {
   // Если isOpen === false, React просто проигнорирует этот блок
   if (!isOpen) return null;
 
@@ -16,12 +16,14 @@ const Modal = ({ isOpen, onClose, title, children }) => {
         <div className="modal-body">
           {children}
         </div>
-
+        {needButtons &&
+        
         <div className="modal-footer">
-          {/* Используем наш компонент Button */}
           <Button variant="secondary" onClick={onClose}>ОТМЕНА</Button>
-          <Button variant="primary">ПОДТВЕРДИТЬ</Button>
+          <Button variant="primary" onClick={onClose}>ПОДТВЕРДИТЬ</Button>
         </div>
+        }
+        
       </div>
     </div>
   );
