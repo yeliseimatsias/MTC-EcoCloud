@@ -8,10 +8,18 @@
   border-bottom: 1px solid #e9ecef;
   font-family: Arial, sans-serif;
 }
+.eco-score {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #000;
+  font-weight: 500;
+  text-shadow: 0 1px 2px rgba(255,255,255,0.5); /* для читаемости на светлом фоне */
+}
 
 .header__logo
 {
-  width: 140px;
+  min-width: 140px;
   height: 110px;
 
   margin: -30px 0;
@@ -19,6 +27,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   cursor: pointer;
+  margin-right: 10px;
 }
 
 .header__nav {
@@ -116,9 +125,8 @@
 }
 
 .header__dropdown-item {
-  width: 100%;
   padding: 12px 20px;
-  background: transparent;
+  background: #e74c3c;
   border: none;
   color: #eef2f6;
   font-size: 15px;
@@ -126,9 +134,10 @@
   text-align: left;
   cursor: pointer;
   transition: background 0.2s;
+  border-radius: 30px;
 }
 
 .header__dropdown-item:hover {
-  background: #e74c3c;
+  background: #e74d3c8f;
   color: white;
 }

@@ -42,9 +42,6 @@ body {
   letter-spacing: -0.02em;
 }
 
-.vm__actions .btn{
-  flex: 1;
-}
 /* Сетка карточек */
 .vm__cards {
   display: grid;

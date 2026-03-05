@@ -14,7 +14,8 @@ function App() {
       ramUsed: 4.2,
       disk: 100,
       diskType: 'SSD',
-      mode: "эко"
+      status: 'on',
+      statusText: 'Включена (On)',
     },
     {
       name: 'DB_Replica_03',
@@ -24,7 +25,8 @@ function App() {
       ramUsed: 10,
       disk: 500,
       diskType: 'NVMe',
-      mode: "производительный"
+      status: 'on',
+      statusText: 'Включена (On)',
     },
     {
       name: 'Test_Env_App',
@@ -34,13 +36,14 @@ function App() {
       ramUsed: 0,
       disk: 50,
       diskType: 'SSD',
-      mode: "эко"
+      status: 'off',
+      statusText: 'Выключена (Off)',
     },
   ]
 
   return ( 
     <>
-      <Header />
+      <Header navItems={[{name:'Главная', route: '/'},{name:'Дашборд', route: '/dashboard'}, {name:'Тенанты', route: '/tenants'}]}/>
       <VirtualMachine List={vmList} />
     </>
   )

@@ -21,6 +21,7 @@ const Card = ({ vm, onDelete, isModalCard = false }) => {
                 <div className="vm-card__spec">CPU: {vm.cpu} vCPU ({vm.cpuUsage}%)</div>
                 <div className="vm-card__spec">RAM: {vm.ram}GB ({vm.ramUsed}GB used)</div>
                 <div className="vm-card__spec">Диск: {vm.disk}GB ({vm.diskType})</div>
+                <div className="vm-card__spec">Режим: {vm.mode}</div>
             </div>
             </div>
 
@@ -35,14 +36,22 @@ const Card = ({ vm, onDelete, isModalCard = false }) => {
                             <Button variant="primary" className="btn-mini">КНОПКА 3</Button>
                         </>
                     ) : (
-                        // Кнопка для основного списка (удаление)
+                        <>
                         <Button 
                             variant="primary" 
                             className="btn-delete-full"
                             onClick={() => onDelete(vm.name)}
                         >
-                            УДАЛИТЬ ИЗ СПИСКА
+                            УДАЛИТЬ
                         </Button>
+
+                        <Button 
+                            variant="primary" 
+                            className="btn-change-full"
+                        >
+                            ИЗМЕНИТЬ
+                        </Button>
+                        </>
                     )}
                 </div>
             )}
