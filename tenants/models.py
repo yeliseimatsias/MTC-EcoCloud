@@ -1,6 +1,6 @@
 import uuid
 from django.db import models
-from django.contrib.auth.models import User, AbstractUser  # Встроенная таблица с Email и Паролем
+from django.contrib.auth.models import AbstractUser
 
 
 class CustomUser(AbstractUser):
@@ -17,6 +17,7 @@ class CustomUser(AbstractUser):
     def __str__(self):
         return self.username
 
+
 class VirtualMachine(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     
@@ -27,23 +28,33 @@ class VirtualMachine(models.Model):
     status = models.CharField(max_length=50, default="stopped", verbose_name="Статус")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания")
     
-    # ПРИОРИТЕТЫ (Эко или Обычный)
+    # ПРИОРИТЕТЫ (Эко или Производительный)
     PRIORITY_CHOICES = [
-        ('ECO', 'Эко-режим (Низкий приоритет)'),
-        ('STD', 'Стандартный'),
-        ('PRM', 'Максимум (Высокий приоритет)'),
+        ('ECO', 'Эко'),
+        ('PROD', 'Производительный'),
     ]
-    priority = models.CharField(max_length=3, choices=PRIORITY_CHOICES, default='STD')
+    priority = models.CharField(
+        max_length=4,  # Увеличили до 4 для 'PROD'
+        choices=PRIORITY_CHOICES,
+        default='ECO',
+        verbose_name="Приоритет"
+    )
     
-    cpu = models.IntegerField(default=1)
-    ram = models.IntegerField(default=2)
+    cpu = models.IntegerField(default=1, verbose_name="Количество ядер CPU")
+    ram = models.IntegerField(default=2, verbose_name="RAM (ГБ)")
 
     def __str__(self):
-        return f"{self.name} ({self.priority})"
+        return f"{self.name} ({self.get_priority_display()})"
+
 
 class ResourceLimit(models.Model):
     # Связь один-к-одному с таблицей ВМ (у одной ВМ одни лимиты)
-    vm = models.OneToOneField(VirtualMachine, on_delete=models.CASCADE, related_name='limits', verbose_name="Виртуальная машина")
+    vm = models.OneToOneField(
+        VirtualMachine, 
+        on_delete=models.CASCADE, 
+        related_name='limits', 
+        verbose_name="Виртуальная машина"
+    )
     cpu_cores = models.PositiveIntegerField(verbose_name="Ядра CPU")
     ram_mb = models.PositiveIntegerField(verbose_name="RAM (МБ)")
     disk_gb = models.PositiveIntegerField(verbose_name="Диск (ГБ)")
